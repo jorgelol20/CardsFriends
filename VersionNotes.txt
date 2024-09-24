@@ -1,7 +1,0 @@
-==================
-    24/09/2024   |
-========================================================================
-Versión 1.0 de la APP con todas las funcionalidades básicas y una      |
-interfaz simple además de a prueba de "usuarios torpes", impidiendo que|
-puedan "cagarla".                                                       |
-========================================================================
