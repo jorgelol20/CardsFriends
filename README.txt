@@ -1,15 +1,6 @@
 ///////////////////////////////////////////
 ///////////////CARDS FRIENDS///////////////
 ///////////////////////////////////////////
-===============================================================================
-	COSA IMPORTANTE SOBRE EL .EXE | IMPORTANT THING OF .EXE 
-===============================================================================
---ESP--
-Puede ser que la primera vez que se ejecute el antivirus salte. Simplemente a "Más información" y "Ejecutar de todas formas"
-
---ENG--
-It may happen that the first time you run the antivirus it will pop up. Simply go to "More information" and "Run anyway"
-
 ======================================================
  COMO IMPORTAR A INTELLIJ / HOW TO IMPORT TO INTELLIJ
 ======================================================
