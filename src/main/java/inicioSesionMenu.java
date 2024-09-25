@@ -1,7 +1,12 @@
+import com.password4j.Password;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.*;
+import java.util.EventListener;
 
 public class inicioSesionMenu {
     //Todos los componentes de el menú////////
@@ -108,7 +113,9 @@ public class inicioSesionMenu {
                 /* System.out.println(STR."INTRODUCIDA: \{user} | MySQL: \{usuario}");
                  System.out.println(STR."INTRODUCIDA: \{contrasena} | MySQL: \{password}"); */
 
-            if (usuario.equals(user) && contrasena.equals(password)) {
+            /*Consulta si el usuario es igual al que ha introducido el usuario en el inicio de
+            * sesión y comprueba con el algoritmo de Bcrypt si la contraseña es la almacenada*/
+            if (usuario.equals(user) && Password.check(contrasena,password).withBcrypt()){
                 resultado = true;
             }
         }

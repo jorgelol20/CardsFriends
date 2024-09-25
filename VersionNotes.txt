@@ -3,5 +3,11 @@
 ========================================================================
 Versión 1.0 de la APP con todas las funcionalidades básicas y una      |
 interfaz simple además de a prueba de "usuarios torpes", impidiendo que|
-puedan "cagarla".                                                       |
+puedan "cagarla".                                                      |
+========================================================================
+==================
+    25/09/2024   |
+========================================================================
+Añadidos diversos comentarios en el código para facilitar su lectura.  |
+Cifrado de contraseñas mediante el algoritmo de hash Bcrypt.           |
 ========================================================================

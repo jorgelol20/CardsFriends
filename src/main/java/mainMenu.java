@@ -8,10 +8,10 @@ public class mainMenu {
     private JPanel mainPanel;
     private JButton botonInicio;
     private JButton botonRegistro;
-    private JButton botonAdmin;
     private JButton botonMinimizar;
     private JButton botonSalir;
     private JLabel logo;
+    private JLabel separadorCasero;
 
     ////////////////////////////////////
     public mainMenu(JFrame frame) {
@@ -27,12 +27,6 @@ public class mainMenu {
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
                 registrarseMenu.main();
-            }
-        });
-        botonAdmin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Función actualmente en desarrollo, espere a siguientes actualizaciones", "Función no disponible", JOptionPane.INFORMATION_MESSAGE);
             }
         });
         botonSalir.addActionListener(new ActionListener() {

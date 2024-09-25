@@ -1,3 +1,6 @@
+import com.password4j.Hash;
+import com.password4j.Password;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,21 +27,30 @@ public class registrarseMenu {
         botonRegistrarse.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Recoge el String que haya en el JPasswordField y le da el valor a contrasena
                 String contrasena = indicarContraseña.getText();
-                if (passwordF(contrasena)) {
+                //Pedirá un valor booleano a comprobarContrasena y le pasará la variable contrasena
+                //Caso "True" línea 36. Caso False línea 53
+                if (comprobarContrasena(contrasena)) {
                     try {
+                        /*Si la comprobarContrasena a devuelto true, recogerá el String del
+                        JTextField y le dará valor a la variable usuario.*/
                         String usuario = indicarUsuario.getText();
+                        //Pedirá otro booleano a registrar, pasandole los valores de usuario y contrasena
                         if (registrar(usuario,contrasena)) {
-                            // Creará una notificación indicando que se ha registrado el usuario
+                        /*En caso de devolver true, creará una notificación indicando que
+                        se ha registrado el usuario y se iniciará el userMenu*/
                             JOptionPane.showMessageDialog(null, "Te has registrado con exito");
                             frame.setVisible(false);
                             userMenu.main(usuario);
+                        //Si devuelve falso, significará que el usuario ya existe y lo indicará con un JOptionPane.
                         } else {
                             JOptionPane.showMessageDialog(null, "El usuario ya existe");
                         }
                     } catch (SQLException ex) {
                     }
                 } else {
+                    //En caso de false, le indicará los criterios que debe tener la contraseña.
                     frame.setSize(340, 240);
                     textArea1.setVisible(true);
                     textArea1.setText("La contraseña debe tener: \n-8 carácteres o más. \n-Un carácter especial.    -_#!$%&'()*+,./ \n-Un carácter numérico. \n-Una letra minúscula. \n-Una letra mayúscula.");
@@ -66,14 +78,13 @@ public class registrarseMenu {
         });
     }
     //Comprueba la contraseña que el usuario ha indicado en el "formulario"
-    private static boolean passwordF(String password) {
+    private static boolean comprobarContrasena(String password) {
         //Valores a comprobar (Siempre false por defecto)
         boolean mayuscula = false;
         boolean minuscula = false;
         boolean numero = false;
         boolean especial = false;
         boolean correcto;
-
         for (int i = 0; i < password.length(); i++) {
             if ((int) password.charAt(i) < 91 && (int) password.charAt(i) > 64) {
                 mayuscula = true;
@@ -85,6 +96,7 @@ public class registrarseMenu {
                 numero = true;
             }
         }
+        //Si la contraseña tiene menos de 8 caracteres y no se cumplen todos los requisitos, devolverá false. Si todo se cumple, devolverá true.
         if ((password.length() < 8 || !especial || !numero || !minuscula || !mayuscula)) {
             correcto = false;
         } else {
@@ -115,20 +127,25 @@ public class registrarseMenu {
             }
 
             if (!repetido) {
+                //Crea un hash mediante el algoritmo Bcrypt
+                Hash passEncrypted = Password.hash(contrasena).withBcrypt();
                 // Consulta para insertar un nuevo usuario
                 String insertQuery = "INSERT INTO users (usuario, password) VALUES (?, ?)";
                 try (PreparedStatement insertStmt = connectSQL.prepareStatement(insertQuery)) {
+                    //La consulta introducirá el usuario validado y la contraseña cifrada mediante hashing
                     insertStmt.setString(1, user);
-                    insertStmt.setString(2, contrasena);
+                    insertStmt.setString(2, passEncrypted.getResult());
                     insertStmt.executeUpdate();
                     resultado = true;
                 }
             }
+        //En caso de error, imprimirá en consola el por qué
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;
-        }
 
+        }
+        //Devuelve el booleano
         return resultado;
     }
 

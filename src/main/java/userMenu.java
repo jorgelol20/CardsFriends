@@ -1,6 +1,5 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -28,6 +27,9 @@ public class userMenu {
     private JComboBox desplegableCantidad;
     private JTable tablaPrincipal;
     private JLabel separadorCasero;
+    private JButton botonAjustes;
+    private JLabel separadorCasero2;
+    private JLabel separadorCasero3;
     private static String juego;
     //////////////////////////////////////
 
@@ -142,6 +144,13 @@ public class userMenu {
                 botonMagic.setIcon(bMgris);
                 botonYugi.setIcon(bYcolor);
                 juego = "Yu-Gi-Oh";
+            }
+        });
+        botonAjustes.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                ajustes.main(usuario);
             }
         });
     }
