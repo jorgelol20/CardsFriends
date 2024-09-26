@@ -14,7 +14,6 @@ public class inicio {
         } catch (SQLException e) {
             System.exit(0);
         }
-
     }
 
     public static void comprobar() throws SQLException {

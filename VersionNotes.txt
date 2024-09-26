@@ -11,3 +11,9 @@ puedan "cagarla".                                                      |
 Añadidos diversos comentarios en el código para facilitar su lectura.  |
 Cifrado de contraseñas mediante el algoritmo de hash Bcrypt.           |
 ========================================================================
+==================
+    26/09/2024   |
+========================================================================
+Menú de administración de las cartas. Accesible desde el menú          |
+principal dando al botón "Administrar cartas"                          |
+========================================================================

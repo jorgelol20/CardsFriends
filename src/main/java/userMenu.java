@@ -18,7 +18,7 @@ public class userMenu {
     private JLabel textoCantidad;
     private JLabel textoJuego;
     private JTextField introduceJuego;
-    private JButton botonBuscar;
+    private JButton botonAdministrar;
     private JButton botonMinimizar;
     private JButton volverButton;
     private JButton botonPokemon;
@@ -69,7 +69,7 @@ public class userMenu {
                 String carta = introduceCarta.getText();
                 String candida = (String) desplegableCantidad.getSelectedItem();
                 if (carta.isEmpty()) {
-                    JOptionPane.showConfirmDialog(null, "El nombre de la carta no puede estar en blanco", "Error", JOptionPane.OK_CANCEL_OPTION);
+                    JOptionPane.showConfirmDialog(null, "El nombre de la carta no puede estar en blanco", "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE);
                 } else if (juego == null) {
                     JOptionPane.showConfirmDialog(null, "El juego al que pertenece la carta no puede estar en blanco", "Error", JOptionPane.OK_CANCEL_OPTION);
                 }else {
@@ -106,17 +106,10 @@ public class userMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                frame.dispose();
                 mainMenu.main();
             }
         });
-        //Boton de buscar cartas de otros jugadores
-        botonBuscar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Función actualmente en desarrollo, espere a siguientes actualizaciones", "Función no disponible", JOptionPane.INFORMATION_MESSAGE);
-            }
-        });
-
         /*Al seleccionar un boton de una de las cartas, las otras se pondrán en gris
          * y la variable "juego" pasará a tener el valor del nombre del juego.     */
         botonPokemon.addActionListener(new ActionListener() {
@@ -149,8 +142,14 @@ public class userMenu {
         botonAjustes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+            }
+        });
+        botonAdministrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                ajustes.main(usuario);
+                frame.dispose();
+                administrarCartas.main(usuario);
             }
         });
     }

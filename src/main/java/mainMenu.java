@@ -26,6 +26,7 @@ public class mainMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                frame.dispose();
                 registrarseMenu.main();
             }
         });

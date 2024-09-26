@@ -51,7 +51,7 @@ public class registrarseMenu {
                     }
                 } else {
                     //En caso de false, le indicará los criterios que debe tener la contraseña.
-                    frame.setSize(340, 240);
+                    frame.setSize(340, 260);
                     textArea1.setVisible(true);
                     textArea1.setText("La contraseña debe tener: \n-8 carácteres o más. \n-Un carácter especial.    -_#!$%&'()*+,./ \n-Un carácter numérico. \n-Una letra minúscula. \n-Una letra mayúscula.");
                 }
@@ -73,6 +73,7 @@ public class registrarseMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                frame.dispose();
                 mainMenu.main();
             }
         });

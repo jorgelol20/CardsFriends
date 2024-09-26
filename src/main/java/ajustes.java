@@ -8,8 +8,11 @@ public class ajustes {
     private JButton botonMinimizar;
     private JButton botonSalir;
     private JButton volverButton;
+    private JLabel alerta;
+    private JPanel panelSuperior;
 
     public ajustes(String usuario, JFrame frame) {
+
         botonSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -26,6 +29,7 @@ public class ajustes {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                frame.dispose();
                 userMenu.main(usuario);
             }
         });
