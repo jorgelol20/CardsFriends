@@ -12,6 +12,7 @@ public class mainMenu {
     private JButton botonSalir;
     private JLabel logo;
     private JLabel separadorCasero;
+    private JButton ayudaButton;
 
     ////////////////////////////////////
     public mainMenu(JFrame frame) {
@@ -34,6 +35,12 @@ public class mainMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
+            }
+        });
+        ayudaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showConfirmDialog(null,"Si has olvidado la contraseña, el usuario \n o tienes cualquier otra duda, escriba a jorgejorgemonovar@gmail.com","Panel Ayuda ",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE);
             }
         });
     }

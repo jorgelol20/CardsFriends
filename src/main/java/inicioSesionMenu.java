@@ -26,28 +26,27 @@ public class inicioSesionMenu {
         botonInicio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String usuario = "";
-                String contrasena = "";
-                usuario = textUsuario.getText();
-                contrasena = contraseña.getText();
-                //Intenta iniciar sesión yendo a la función "iniciar"
-                try {
-                    if (iniciar(usuario, contrasena)) {
-                        /*Si las credenciales son correctas saltará una ventana
-                         *emergente indicando que has iniciado sesión con éxito y entrarás en el menú de usuario*/
-                        JOptionPane.showMessageDialog(botonInicio, "Has iniciado sesión con exito");
-                        frame.setVisible(false);
-                        userMenu.main(usuario);
-                        //Si las credenciales son incorrectas saltará una ventana emergente indicando lo.
-                    } else {
-                        JOptionPane.showMessageDialog(botonInicio, "El usuario o la contraseña son incorrectos", "Error al iniciar sesión", JOptionPane.WARNING_MESSAGE);
-                    }
-                        //En caso de error con la base de datos, saltará una ventana emergente indicando lo
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null, "Error al conectar con la base de datos", "ERROR", JOptionPane.WARNING_MESSAGE);
-                } catch (ClassNotFoundException ex) {
-                    throw new RuntimeException(ex);
+                inicio(frame);
+            }
+        });
+        contraseña.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyCode()==KeyEvent.VK_ENTER){
+                    inicio(frame);
                 }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode()==KeyEvent.VK_ENTER){
+                    inicio(frame);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
             }
         });
         //Barra superior del menú
@@ -77,7 +76,31 @@ public class inicioSesionMenu {
     //////////////////Inicio de sesión//////////////////////
     ////////////////////////////////////////////////////////
 
-
+    void inicio(JFrame frame){
+        String usuario = "";
+        String contrasena = "";
+        usuario = textUsuario.getText();
+        contrasena = contraseña.getText();
+        //Intenta iniciar sesión yendo a la función "iniciar"
+        try {
+            if (iniciar(usuario, contrasena)) {
+                /*Si las credenciales son correctas saltará una ventana
+                 *emergente indicando que has iniciado sesión con éxito y entrarás en el menú de usuario*/
+                JOptionPane.showMessageDialog(botonInicio, "Has iniciado sesión con exito");
+                frame.setVisible(false);
+                userMenu.main(usuario);
+                //Si las credenciales son incorrectas saltará una ventana emergente indicando lo.
+            } else {
+                JOptionPane.showMessageDialog(botonInicio, "El usuario o la contraseña son incorrectos", "Error al iniciar sesión", JOptionPane.WARNING_MESSAGE);
+                contraseña.setText(null);
+            }
+            //En caso de error con la base de datos, saltará una ventana emergente indicando lo
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al conectar con la base de datos", "ERROR", JOptionPane.WARNING_MESSAGE);
+        } catch (ClassNotFoundException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
     private static boolean iniciar(String user, String contrasena) throws SQLException, ClassNotFoundException {
 
         //Credenciales de la base de datos

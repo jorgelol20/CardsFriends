@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="mainMenu">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -13,7 +13,7 @@
       <grid id="9c94e" layout-manager="GridLayoutManager" row-count="1" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="0" row-span="3" col-span="9" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="0" row-span="3" col-span="11" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <maximum-size width="-1" height="40"/>
           </grid>
         </constraints>
@@ -90,7 +90,7 @@
       </grid>
       <component id="940f6" class="javax.swing.JButton" binding="botonInicio">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="2" row-span="1" col-span="8" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-13092808"/>
@@ -103,12 +103,12 @@
       </component>
       <vspacer id="b3cc1">
         <constraints>
-          <grid row="6" column="3" row-span="1" col-span="5" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="4" row-span="1" col-span="6" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <component id="831ed" class="javax.swing.JLabel" binding="logo">
         <constraints>
-          <grid row="3" column="8" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="10" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <icon value="icons/logo1.png"/>
@@ -117,7 +117,7 @@
       </component>
       <component id="e0152" class="javax.swing.JButton" binding="botonRegistro">
         <constraints>
-          <grid row="5" column="1" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="2" row-span="1" col-span="8" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-13092808"/>
@@ -129,9 +129,31 @@
       </component>
       <component id="78d6c" class="javax.swing.JLabel" binding="separadorCasero">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="f6199" class="javax.swing.JButton" binding="ayudaButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="20" height="20"/>
+            <preferred-size width="40" height="40"/>
+            <maximum-size width="40" height="40"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-13092808"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <font name="Arial Black" size="10"/>
+          <foreground color="-1"/>
+          <icon value="icons/ayuda.png"/>
+          <pressedIcon value="icons/ayuda2.png"/>
+          <rolloverIcon value="icons/ayuda2.png"/>
+          <rolloverSelectedIcon value="icons/ayuda2.png"/>
+          <selectedIcon value="icons/ayuda2.png"/>
           <text value=""/>
         </properties>
       </component>

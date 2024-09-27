@@ -51,11 +51,12 @@
             </constraints>
             <properties>
               <background color="-1"/>
-              <caretColor color="-1"/>
-              <disabledTextColor color="-1"/>
+              <caretColor color="-13947600"/>
+              <disabledTextColor color="-13947600"/>
+              <focusTraversalPolicyProvider value="false"/>
               <font name="Arial Black" size="14"/>
               <foreground color="-13092808"/>
-              <selectedTextColor color="-1"/>
+              <selectedTextColor color="-13947600"/>
               <selectionColor color="-22784"/>
             </properties>
           </component>
@@ -324,17 +325,6 @@
         </constraints>
         <properties>
           <text value=""/>
-        </properties>
-      </component>
-      <component id="c8421" class="javax.swing.JButton" binding="botonAjustes">
-        <constraints>
-          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-13092808"/>
-          <font name="Arial Black" size="14"/>
-          <foreground color="-1"/>
-          <text value="Ajustes"/>
         </properties>
       </component>
       <component id="e2c01" class="javax.swing.JLabel" binding="separadorCasero3">

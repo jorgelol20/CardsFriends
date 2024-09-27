@@ -27,7 +27,6 @@ public class userMenu {
     private JComboBox desplegableCantidad;
     private JTable tablaPrincipal;
     private JLabel separadorCasero;
-    private JButton botonAjustes;
     private JLabel separadorCasero2;
     private JLabel separadorCasero3;
     private static String juego;
@@ -139,11 +138,6 @@ public class userMenu {
                 juego = "Yu-Gi-Oh";
             }
         });
-        botonAjustes.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
         botonAdministrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -200,6 +194,15 @@ public class userMenu {
                     //cartas.append("Nombre: ").append(nombreCarta).append(", Juego: ").append(juegoCarta).append(", Cantidad: ").append(cantidadCarta).append("\n");
                 }
                 tablaPrincipal.setModel(tabla);
+                //Creamos columnModel para cambiar propiedades de las columnas
+                TableColumnModel columnModel = tablaPrincipal.getColumnModel();
+                //Aumentamos el tamaño de la columna 0 ("Nombre") y la columna 2 ("Cantidad")
+                columnModel.getColumn(0).setPreferredWidth(190);
+                columnModel.getColumn(2).setPreferredWidth(60);
+                //Cambiamos el color a la tabla
+                tablaPrincipal.setBackground(Color.black);
+                tablaPrincipal.setForeground(Color.WHITE);
+                tablaPrincipal.setFont(Font.getFont("Arial Black 14 pt"));
                 return null;
             }
         } catch (SQLException e) {

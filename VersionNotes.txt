@@ -17,3 +17,8 @@ Cifrado de contraseñas mediante el algoritmo de hash Bcrypt.           |
 Menú de administración de las cartas. Accesible desde el menú          |
 principal dando al botón "Administrar cartas"                          |
 ========================================================================
+==================
+    27/09/2024   |
+========================================================================
+Añadido el menú de ayuda en el menú de inicio de la APP                |
+========================================================================
